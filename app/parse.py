@@ -97,7 +97,7 @@ def write_authors_to_csv(csv_path: str = "authors.csv") -> None:
     with open(csv_path, "w", encoding="utf-8", newline="") as file:
         writer = csv.writer(file)
         writer.writerow([field.name for field in fields(Author)])
-        writer.writerows([astuple(quote) for quote in AUTHOR_CACHE.values()])
+        writer.writerows([astuple(author) for author in AUTHOR_CACHE.values()])
 
 
 def write_quotes_to_csv(csv_path: str, quotes: list[Quote]) -> None:
